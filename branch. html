@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Branches | Jasmine Kitchen</title>
+
+<meta name="description" content="Explore Jasmine Kitchen branches across Ghaziabad. Fresh food available in all areas.">
+<meta name="keywords" content="Jasmine Kitchen, restaurant Ghaziabad, food delivery Ghaziabad, pizza burger cake Ghaziabad">
+<meta name="author" content="Jasmine Kitchen">
+
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:black;
+color:white;
+}
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+section{
+margin-bottom:20px;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+border-bottom:2px solid gold;
+position:sticky;
+top:0;
+background:black;
+z-index:1000;
+}
+
+.logo{
+color:gold;
+font-size:24px;
+font-weight:700;
+letter-spacing:1px;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:500;
+transition:color 0.3s ease;
+position:relative;
+}
+
+nav a:hover{
+color:gold;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+background:gold;
+left:0;
+bottom:-5px;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+.active{
+color:gold;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:70px 20px;
+}
+
+.hero h1{
+color:gold;
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+opacity:0.9;
+font-size:16px;
+}
+
+/* BRANCH SECTION */
+
+.branches{
+max-width:1100px;
+margin:auto;
+padding:40px 30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.branch-card{
+background:#111;
+border:1px solid gold;
+border-radius:12px;
+overflow:hidden;
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+cursor:pointer;
+}
+
+.branch-card:hover{
+transform:translateY(-6px) scale(1.03);
+box-shadow:0 0 20px rgba(255,215,0,0.6);
+}
+
+.branch-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.branch-info{
+padding:18px;
+}
+
+.branch-info h3{
+color:gold;
+margin:0 0 10px 0;
+font-size:18px;
+}
+
+.branch-info p{
+font-size:14px;
+margin:6px 0;
+opacity:0.9;
+}
+
+/* CLICKABLE CONTACT LINKS */
+
+.branch-info a,
+footer a{
+color:gold;
+text-decoration:none;
+}
+
+.branch-info a:hover,
+footer a:hover{
+text-decoration:underline;
+}
+
+/* DELIVERY AREA */
+
+.delivery{
+text-align:center;
+margin-top:10px;
+font-weight:500;
+color:gold;
+font-size:16px;
+}
+
+/* MAP */
+
+.map{
+max-width:1000px;
+margin:40px auto;
+padding:20px;
+}
+
+.map iframe{
+width:100%;
+height:360px;
+border:0;
+border-radius:12px;
+box-shadow:0 0 15px rgba(255,215,0,0.4);
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+border-top:2px solid gold;
+margin-top:40px;
+font-size:14px;
+background:#080808;
+}
+
+footer p{
+margin:6px 0;
+opacity:0.9;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+text-align:center;
+}
+
+nav{
+justify-content:center;
+}
+
+.hero h1{
+font-size:30px;
+}
+
+.branches{
+padding:25px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Jasmine Kitchen</div>
+
+<nav aria-label="Main navigation">
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="order.html">Order</a>
+<a href="branches.html" class="active">Branches</a>
+<a href="about.html">About</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Our Branches</h1>
+<p>Visit Jasmine Kitchen anywhere in Ghaziabad</p>
+
+</section>
+
+<section class="branches">
+
+<div class="branch-card">
+
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop" alt="Jasmine Kitchen Central Branch" loading="lazy">
+
+<div class="branch-info">
+
+<h3>Jasmine Kitchen – Central Ghaziabad</h3>
+
+<p>Address: Ghaziabad, Uttar Pradesh</p>
+<p>Phone: <a href="tel:+919621597584">+91 96215 97584</a></p>
+<p>Open: 7:00 AM – 11:00 PM</p>
+
+</div>
+
+</div>
+
+<div class="branch-card">
+
+<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&auto=format&fit=crop" alt="Jasmine Kitchen Indirapuram Branch" loading="lazy">
+
+<div class="branch-info">
+
+<h3>Jasmine Kitchen – Indirapuram</h3>
+
+<p>Address: Indirapuram, Ghaziabad</p>
+<p>Phone: <a href="tel:+919621597584">+91 96215 97584</a></p>
+<p>Open: 7:00 AM – 11:00 PM</p>
+
+</div>
+
+</div>
+
+<div class="branch-card">
+
+<img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&auto=format&fit=crop" alt="Jasmine Kitchen Vaishali Branch" loading="lazy">
+
+<div class="branch-info">
+
+<h3>Jasmine Kitchen – Vaishali</h3>
+
+<p>Address: Vaishali, Ghaziabad</p>
+<p>Phone: <a href="tel:+919621597584">+91 96215 97584</a></p>
+<p>Open: 7:00 AM – 11:00 PM</p>
+
+</div>
+
+</div>
+
+<div class="branch-card">
+
+<img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&auto=format&fit=crop" alt="Jasmine Kitchen Raj Nagar Branch" loading="lazy">
+
+<div class="branch-info">
+
+<h3>Jasmine Kitchen – Raj Nagar</h3>
+
+<p>Address: Raj Nagar, Ghaziabad</p>
+<p>Phone: <a href="tel:+919621597584">+91 96215 97584</a></p>
+<p>Open: 7:00 AM – 11:00 PM</p>
+
+</div>
+
+</div>
+
+<div class="branch-card">
+
+<img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&auto=format&fit=crop" alt="Jasmine Kitchen Kaushambi Branch" loading="lazy">
+
+<div class="branch-info">
+
+<h3>Jasmine Kitchen – Kaushambi</h3>
+
+<p>Address: Kaushambi, Ghaziabad</p>
+<p>Phone: <a href="tel:+919621597584">+91 96215 97584</a></p>
+<p>Open: 7:00 AM – 11:00 PM</p>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="delivery">
+
+Delivery available in all areas of Ghaziabad 🚚
+
+</div>
+
+<section class="map">
+
+<iframe
+title="Ghaziabad Location Map"
+src="https://maps.google.com/maps?q=ghaziabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
+loading="lazy">
+</iframe>
+
+</section>
+
+<footer>
+
+<p>"Good food is the foundation of genuine happiness."</p>
+<p>Orders: <a href="tel:+919621597584">+91 96215 97584</a></p>
+<p>Email: <a href="mailto:dubeyashutosh08@gmail.com">dubeyashutosh08@gmail.com</a></p>
+<p>© 2026 Jasmine Kitchen. All rights reserved.</p>
+
+</footer>
+
+</body>
+</html>
