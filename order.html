@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Order | Jasmine Kitchen</title>
+
+<meta name="description" content="Order delicious food online from Jasmine Kitchen in Ghaziabad.">
+
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:black;
+color:white;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+border-bottom:2px solid gold;
+position:sticky;
+top:0;
+background:black;
+z-index:1000;
+}
+
+.logo{
+color:gold;
+font-size:24px;
+font-weight:700;
+}
+
+/* NAV */
+
+nav{
+display:flex;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:500;
+position:relative;
+transition:0.3s;
+}
+
+nav a:hover{
+color:gold;
+}
+
+/* underline animation */
+
+nav a::after{
+content:"";
+width:0;
+height:2px;
+background:gold;
+position:absolute;
+left:0;
+bottom:-4px;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+color:gold;
+font-size:40px;
+margin-bottom:10px;
+}
+
+.hero p{
+opacity:0.9;
+}
+
+/* FORM */
+
+.order-container{
+max-width:600px;
+margin:auto;
+padding:30px;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+label{
+font-weight:500;
+}
+
+/* INPUTS */
+
+input, select, textarea{
+padding:12px;
+border-radius:6px;
+border:1px solid gold;
+background:#111;
+color:white;
+font-size:14px;
+}
+
+input::placeholder,
+textarea::placeholder{
+color:#aaa;
+}
+
+textarea{
+resize:none;
+height:90px;
+}
+
+/* BUTTON */
+
+button{
+background:gold;
+color:black;
+padding:14px;
+border:none;
+font-weight:bold;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:white;
+transform:scale(1.05);
+}
+
+/* SUCCESS MESSAGE */
+
+#message{
+display:none;
+text-align:center;
+margin-top:25px;
+color:gold;
+font-weight:bold;
+font-size:16px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+border-top:2px solid gold;
+margin-top:40px;
+font-size:14px;
+}
+
+footer p{
+margin:5px 0;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+text-align:center;
+}
+
+nav{
+justify-content:center;
+}
+
+.hero h1{
+font-size:30px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Jasmine Kitchen</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="order.html">Order</a>
+<a href="branches.html">Branches</a>
+<a href="about.html">About</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Place Your Order</h1>
+<p>Fresh food delivered in Ghaziabad</p>
+
+</section>
+
+<div class="order-container">
+
+<form onsubmit="showMessage(event)">
+
+<label for="name">Full Name</label>
+<input id="name" name="fullname" type="text" placeholder="Enter your full name" autocomplete="name" required>
+
+<label for="phone">Phone Number</label>
+<input id="phone" name="phone" type="tel" pattern="[0-9]{10}" placeholder="Enter 10 digit phone number" required>
+
+<label for="email">Email</label>
+<input id="email" name="email" type="email" placeholder="Enter your email address" autocomplete="email" required>
+
+<label for="address">Delivery Address</label>
+<textarea id="address" name="address" placeholder="Enter full delivery address" required></textarea>
+
+<label for="food">Select Food Item</label>
+
+<select id="food" name="food" required>
+
+<option value="">Choose an item</option>
+<option>Margherita Pizza</option>
+<option>Farmhouse Pizza</option>
+<option>Cheese Burst Pizza</option>
+<option>Veg Burger</option>
+<option>Cheese Burger</option>
+<option>Gulab Jamun</option>
+<option>Chocolate Cake</option>
+<option>Chocolate Lava</option>
+<option>Coca-Cola</option>
+<option>Cold Coffee</option>
+
+</select>
+
+<label for="quantity">Quantity</label>
+<input id="quantity" name="quantity" type="number" min="1" max="10" value="1" required>
+
+<label for="payment">Payment Method</label>
+
+<select id="payment" name="payment" required>
+<option value="">Select payment method</option>
+<option>Cash on Delivery</option>
+<option>UPI</option>
+<option>Card on Delivery</option>
+</select>
+
+<label for="notes">Special Instructions</label>
+<textarea id="notes" name="notes" placeholder="Any special request (optional)"></textarea>
+
+<button type="submit">Place Order</button>
+
+</form>
+
+<div id="message">
+
+Thank you for ordering from Jasmine Kitchen!  
+Your order has been received successfully.
+
+</div>
+
+</div>
+
+<footer>
+
+<p>"Good food is the foundation of genuine happiness."</p>
+<p>Orders: 9621597584</p>
+<p>Email: dubeyashutosh08@gmail.com</p>
+<p>© 2026 Jasmine Kitchen. All rights reserved.</p>
+
+</footer>
+
+<script>
+
+function showMessage(event){
+
+event.preventDefault();
+
+const message = document.getElementById("message");
+
+message.style.display = "block";
+
+message.scrollIntoView({behavior:"smooth"});
+
+event.target.reset();
+
+}
+
+</script>
+
+</body>
+</html>
