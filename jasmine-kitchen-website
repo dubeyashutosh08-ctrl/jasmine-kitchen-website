@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jasmine Kitchen</title>
+
+<meta name="description" content="Jasmine Kitchen - Delicious pizza, burgers and desserts loved by students.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:'Poppins', sans-serif;
+background:black;
+color:white;
+}
+
+/* NAVBAR */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+border-bottom:2px solid gold;
+flex-wrap:wrap;
+}
+
+.logo{
+color:gold;
+font-size:24px;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+position:relative;
+}
+
+nav a:hover{
+color:gold;
+}
+
+/* underline hover */
+
+nav a::after{
+content:"";
+width:0;
+height:2px;
+background:gold;
+position:absolute;
+left:0;
+bottom:-4px;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:70px 20px;
+animation:fadeIn 1.8s ease;
+}
+
+.hero h1{
+color:gold;
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+opacity:0.9;
+}
+
+.hero button{
+margin-top:25px;
+padding:14px 28px;
+font-size:18px;
+background:gold;
+border:none;
+cursor:pointer;
+border-radius:6px;
+font-weight:bold;
+transition:0.3s;
+animation:glow 2s infinite alternate;
+}
+
+.hero button:hover{
+transform:scale(1.07);
+}
+
+/* BUTTON GLOW */
+
+@keyframes glow{
+from{box-shadow:0 0 10px gold;}
+to{box-shadow:0 0 25px gold;}
+}
+
+/* HERO FADE */
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(-30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* IMAGE SLIDER */
+
+.slider{
+width:100%;
+height:300px;
+overflow:hidden;
+position:relative;
+}
+
+.slides{
+display:flex;
+width:300%;
+animation:slide 15s infinite ease-in-out;
+}
+
+.slides img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+/* SLIDER ANIMATION */
+
+@keyframes slide{
+
+0%{transform:translateX(0);}
+30%{transform:translateX(0);}
+
+33%{transform:translateX(-100%);}
+63%{transform:translateX(-100%);}
+
+66%{transform:translateX(-200%);}
+96%{transform:translateX(-200%);}
+
+100%{transform:translateX(0);}
+
+}
+
+/* FOOD SECTION */
+
+.food{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+padding:50px 20px;
+}
+
+.card{
+width:220px;
+border:1px solid gold;
+padding:20px;
+text-align:center;
+transition:0.4s;
+border-radius:10px;
+background:#111;
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.08);
+box-shadow:0 0 20px gold;
+}
+
+.card h3{
+color:gold;
+margin-bottom:8px;
+}
+
+.card p{
+font-size:14px;
+opacity:0.9;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:25px;
+border-top:2px solid gold;
+font-size:14px;
+margin-top:20px;
+}
+
+/* MOBILE DESIGN */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+header{
+flex-direction:column;
+text-align:center;
+}
+
+nav{
+margin-top:10px;
+}
+
+.slider{
+height:220px;
+}
+
+.slides img{
+height:220px;
+}
+
+.food{
+flex-direction:column;
+align-items:center;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Jasmine Kitchen</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="order.html">Order</a>
+<a href="branches.html">Branches</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>Welcome to Jasmine Kitchen</h1>
+
+<p>Delicious food loved by everyone.</p>
+
+<button onclick="window.location.href='menu.html'">
+View Menu
+</button>
+
+</section>
+
+<!-- IMAGE SLIDER -->
+
+<div class="slider">
+
+<div class="slides">
+
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591" alt="Delicious Pizza served hot" loading="lazy">
+
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Juicy burger with cheese" loading="lazy">
+
+<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Restaurant style food platter" loading="lazy">
+
+</div>
+
+</div>
+
+<!-- FEATURED FOOD -->
+
+<section class="food">
+
+<div class="card">
+<h3>Pizza</h3>
+<p>Hot cheesy pizza loved by students.</p>
+</div>
+
+<div class="card">
+<h3>Burger</h3>
+<p>Crispy delicious burger.</p>
+</div>
+
+<div class="card">
+<h3>Chocolate Lava</h3>
+<p>Sweet molten chocolate dessert.</p>
+</div>
+
+</section>
+
+<footer>
+
+<p>Contact: dubeyashutosh08@gmail.com</p>
+
+<p>© 2026 Jasmine Kitchen</p>
+
+</footer>
+
+</body>
+
+</html>
